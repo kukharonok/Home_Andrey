@@ -1,5 +1,8 @@
 package home.home_work_3.runners;
 
+/**
+ * 4.1 + 15 * 7 + (28 / 5) ^ 2
+ */
 public class WithoutCalculatorMain {
 
     public static void main(String[] args) {

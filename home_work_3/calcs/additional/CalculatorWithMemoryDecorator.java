@@ -46,23 +46,16 @@ public class CalculatorWithMemoryDecorator implements ICalculator {
      * @return значение из памяти калькулятора
      */
     public double getMemoryValue() {
-        double tempMemory = memoryValue;
-        clear();
+        double tempMemory = this.memoryValue;
+        this.memoryValue = 0;
         return tempMemory;
     }
 
     /**
      * Запись результата вычисления в память калькулятора
      */
-    private void record() {
-        this.memoryValue = result;
-    }
-
-    /**
-     * Очистка памяти калькулятора
-     */
-    private void clear() {
-        this.memoryValue = 0;
+    public void record() {
+        this.memoryValue = this.result;
     }
 
     /**
@@ -76,9 +69,8 @@ public class CalculatorWithMemoryDecorator implements ICalculator {
      */
     @Override
     public double pow(double a, int b) {
-        result = this.calculator.pow(a, b);
-        record();
-        return result;
+        this.result = this.calculator.pow(a, b);
+        return this.result;
     }
 
     /**
@@ -91,9 +83,8 @@ public class CalculatorWithMemoryDecorator implements ICalculator {
      */
     @Override
     public double absNumber(double a) {
-        result = this.calculator.absNumber(a);
-        record();
-        return result;
+        this.result = this.calculator.absNumber(a);
+        return this.result;
     }
 
     /**
@@ -106,9 +97,8 @@ public class CalculatorWithMemoryDecorator implements ICalculator {
      */
     @Override
     public double sqrtNumber(double a) {
-        result = this.calculator.sqrtNumber(a);
-        record();
-        return result;
+        this.result = this.calculator.sqrtNumber(a);
+        return this.result;
     }
 
     /**
@@ -122,9 +112,8 @@ public class CalculatorWithMemoryDecorator implements ICalculator {
      */
     @Override
     public double add(double a, double b) {
-        result = this.calculator.add(a, b);
-        record();
-        return result;
+        this.result = this.calculator.add(a, b);
+        return this.result;
     }
 
     /**
@@ -138,9 +127,8 @@ public class CalculatorWithMemoryDecorator implements ICalculator {
      */
     @Override
     public double subtract(double a, double b) {
-        result = this.calculator.subtract(a, b);
-        record();
-        return result;
+        this.result = this.calculator.subtract(a, b);
+        return this.result;
     }
 
     /**
@@ -154,9 +142,8 @@ public class CalculatorWithMemoryDecorator implements ICalculator {
      */
     @Override
     public double multiply(double a, double b) {
-        result = this.calculator.multiply(a, b);
-        record();
-        return result;
+        this.result = this.calculator.multiply(a, b);
+        return this.result;
     }
 
     /**
@@ -170,8 +157,7 @@ public class CalculatorWithMemoryDecorator implements ICalculator {
      */
     @Override
     public double div(double a, double b) {
-        result = this.calculator.div(a, b);
-        record();
-        return result;
+        this.result = this.calculator.div(a, b);
+        return this.result;
     }
 }
